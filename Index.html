@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0b">
+<title>QVSE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="badge">UI</div>
+
+<div id="home" class="screen">
+  <header class="top-icons">
+    <button aria-label="Profile"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="9" r="3"/><path d="M6.5 19c1.5-3 3.5-4.5 5.5-4.5S16 16 17.5 19"/></svg></button>
+    <button aria-label="Wallet"><svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="1"/><path d="M7 8h10M7 12h6"/></svg></button>
+    <span></span>
+    <button aria-label="Messages"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></button>
+    <button aria-label="Account" onclick="showLogin()"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.2"/><path d="M5.5 20c.8-4 3-6 6.5-6s5.7 2 6.5 6"/></svg></button>
+  </header>
+
+  <section class="asset-hero">
+    <div class="hero-copy">
+      <div class="asset-label">Total Assets</div>
+      <div class="asset-line"><strong id="asset">*****</strong><button onclick="toggleAsset()" class="eye">◉</button></div>
+      <div class="hero-actions">
+        <button onclick="showLogin()">Login</button>
+        <button onclick="toast('Registration')">Sign Up</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- <div class="ticker"><svg viewBox="0 0 24 24"><path d="M6 9h12l-1 2v4l2 2H5l2-2v-4z"/><path d="M9 20h6M10 5a2 2 0 0 1 4 0"/></svg><span>withdrawing cash.</span></div> -->
+
+  <section class="shortcuts">
+    <button onclick="toast('Deposit')"><svg viewBox="0 0 24 24"><path d="M4 12h14"/><path d="m14 7 5 5-5 5"/><path d="M4 6v12"/></svg><b>Deposit</b></button>
+    <button onclick="toast('Withdrawal')"><svg viewBox="0 0 24 24"><path d="M20 12H6"/><path d="m10 7-5 5 5 5"/><path d="M20 6v12"/></svg><b>Withdrawal</b></button>
+    <button onclick="toast('Transactions')"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="13" height="18" rx="1"/><path d="M8 7h7M8 10h7M8 13h4M15 16l4 4M17 14l-3 3"/></svg><b>Transactions</b></button>
+    <button onclick="toast('Settings')"><svg viewBox="0 0 24 24"><path d="m12 3 1.2 2.5 2.8.7.9 2.7 2.4 1.4-1 2.6 1 2.6-2.4 1.4-.9 2.7-2.8.7L12 21l-1.2-2.5-2.8-.7-.9-2.7-2.4-1.4 1-2.6-1-2.6 2.4-1.4.9-2.7 2.8-.7z"/><circle cx="12" cy="12" r="3"/></svg><b>Settings</b></button>
+  </section>
+
+  <section class="promo">
+    <div class="promo-brand">QVSE<span></span></div>
+    <div class="paper"><div class="seal">◎</div><b>MARKET<br>REPORT</b><small>Sample document</small></div>
+    <div class="candles"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="promo-title">QUANT VEST STOCK EXCHANGE</div>
+  </section>
+
+  <div class="soundbar"><svg viewBox="0 0 24 24"><path d="M4 10v4h3l5 4V6l-5 4z"/><path d="M16 9c1 1 1 5 0 6M19 7c2 2 2 8 0 10"/></svg></div>
+
+  <section class="news">
+    <div class="news-head"><h2>News</h2><button onclick="toast('Customer service')"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21c1-4 3-6 7-6s6 2 7 6"/></svg>Customer Service</button></div>
+    <article><h3>Apple Fitness+ could be getting Peloton-style live workouts — just as Spotify make…</h3><time>2026-08-17 18:40:12 (UTC+3)</time></article>
+    <article><h3>AXT Soars Again on Monday to Lead Optics Stocks. Coherent and Lumentum Rally on…</h3><time>2026-08-17 18:40:07 (UTC+3)</time></article>
+    <article><h3>Markets continue to track technology and growth stocks as investors assess new data…</h3><time>2026-08-17 17:40:18 (UTC+3)</time></article>
+  </section>
+
+  <nav class="bottom">
+    <button class="selected"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 16v-5M12 16V7M16 16v-8"/></svg><b>Home</b></button>
+    <button onclick="toast('Market')"><svg viewBox="0 0 24 24"><path d="m4 17 5-5 4 3 7-8"/><path d="M17 7h3v3"/></svg><b>Market</b></button>
+    <button onclick="toast('Copy Trading')"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="17" rx="1"/><path d="M8 7h8M8 10h8M8 13h5M15 16h4"/></svg><b>Copy Trading</b></button>
+    <button onclick="showLogin()"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21c1-4 3-6 7-6s6 2 7 6"/></svg><b>My Account</b></button>
+  </nav>
+</div>
+
+<div id="login" class="screen login-screen hidden">
+  <button class="back" onclick="showHome()">‹</button>
+  <h1>Login</h1>
+  <div class="tabs"><button class="active">Email</button><button>Phone Number</button></div>
+  <form onsubmit="Login(event)">
+    <label>Email</label>
+    <input type="email" placeholder="Please enter email" required>
+    <label>Password</label>
+    <div class="password"><input id="pw" type="password" placeholder="Please enter password" required><button type="button" onclick="togglePw()">◉</button></div>
+    <label class="remember"><input type="checkbox" checked>Remember Password</label>
+    <button type="button" class="forgot" onclick="toast('Password recovery')">Forgot Password</button>
+    <label class="agreement"><input type="checkbox" checked> I have read and agree <a href="#" onclick="return false">User Agreement</a></label>
+    <button class="login-submit">Login</button>
+  </form>
+  <button class="download" onclick="toast('App download')">Download App</button>
+  <p class="signup">No Account? <button onclick="toast('Registration')">Sign Up</button></p>
+</div>
+
+<div id="toast"></div>
+<script>
+function showLogin(){home.classList.add('hidden');login.classList.remove('hidden');scrollTo(0,0)}
+function showHome(){login.classList.add('hidden');home.classList.remove('hidden');scrollTo(0,0)}
+function toggleAsset(){asset.textContent=asset.textContent==='*****'?'0.00':'*****'}
+function togglePw(){pw.type=pw.type==='password'?'text':'password'}
+function Login(e){e.preventDefault();toast('Login only — no credentials are transmitted');}
+function toast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>x.classList.remove('show'),1900)}
+</script>
+</body>
+</html>
